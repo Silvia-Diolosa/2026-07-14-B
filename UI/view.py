@@ -29,10 +29,12 @@ class View(ft.UserControl):
 
         # riga 1: selezione genere + creazione grafo + stampa info
         self._ddGenre = ft.Dropdown(label="Genere")
+        self._controller.fillDD()
         self._btnCreaGrafo = ft.ElevatedButton(text="Crea grafo",
                                                 on_click=self._controller.handleCreaGrafo)
         self._btnStampaInfo = ft.ElevatedButton(text="Stampa Info",
-                                                 on_click=self._controller.handleStampaInfo)
+                                                 on_click=self._controller.handleStampaInfo,
+                                                disabled=True)
 
         row1 = ft.Row([ft.Container(self._ddGenre, width=180),
                        ft.Container(self._btnCreaGrafo, width=180),
